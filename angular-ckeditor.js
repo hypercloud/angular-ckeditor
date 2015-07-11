@@ -136,7 +136,8 @@
 
     // Destroy editor when the scope is destroyed.
     $scope.$on('$destroy', function onDestroy() {
-      instance.destroy(false);
+      instance.removeAllListeners();
+      CKEDITOR.remove(instance);
     });
   }
 }));
